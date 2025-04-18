@@ -7,10 +7,6 @@
       "RelativeMoniker": "D:0:0:{8E766D10-FCFA-48EE-89C8-8BEDA2F6987B}|CodePass\\CodePass.csproj|solutionrelative:codepass\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8E766D10-FCFA-48EE-89C8-8BEDA2F6987B}|CodePass\\CodePass.csproj|E:\\Projects\\Visual Studio\\\u0428\u0430\u0431\u0440\u043E\u0432\u0430\\2FA\\CodePass\\codepass\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8E766D10-FCFA-48EE-89C8-8BEDA2F6987B}|CodePass\\CodePass.csproj|solutionrelative:codepass\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8E766D10-FCFA-48EE-89C8-8BEDA2F6987B}|CodePass\\CodePass.csproj|E:\\Projects\\Visual Studio\\\u0428\u0430\u0431\u0440\u043E\u0432\u0430\\2FA\\CodePass\\codepass\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8E766D10-FCFA-48EE-89C8-8BEDA2F6987B}|CodePass\\CodePass.csproj|solutionrelative:codepass\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -34,15 +30,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "E:\\Projects\\Visual Studio\\\u0428\u0430\u0431\u0440\u043E\u0432\u0430\\2FA\\CodePass\\CodePass\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "CodePass\\Form1.Designer.cs",
               "ToolTip": "E:\\Projects\\Visual Studio\\\u0428\u0430\u0431\u0440\u043E\u0432\u0430\\2FA\\CodePass\\CodePass\\Form1.Designer.cs",
               "RelativeToolTip": "CodePass\\Form1.Designer.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAqwCYAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T06:24:42.739Z"
+              "WhenOpened": "2025-02-18T06:24:42.739Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -52,21 +49,10 @@
               "RelativeDocumentMoniker": "CodePass\\Form1.cs",
               "ToolTip": "E:\\Projects\\Visual Studio\\\u0428\u0430\u0431\u0440\u043E\u0432\u0430\\2FA\\CodePass\\CodePass\\Form1.cs",
               "RelativeToolTip": "CodePass\\Form1.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAgwDgAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAcwGQAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-18T06:24:13.388Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "E:\\Projects\\Visual Studio\\\u0428\u0430\u0431\u0440\u043E\u0432\u0430\\2FA\\CodePass\\CodePass\\Form1.cs",
-              "RelativeDocumentMoniker": "CodePass\\Form1.cs",
-              "ToolTip": "E:\\Projects\\Visual Studio\\\u0428\u0430\u0431\u0440\u043E\u0432\u0430\\CodePass\\CodePass\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "..\\..\\CodePass\\CodePass\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T06:23:17.865Z"
             }
           ]
         }

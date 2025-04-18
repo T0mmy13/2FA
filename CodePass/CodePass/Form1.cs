@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Security.Cryptography;
 
 namespace CodePass
 {
@@ -79,15 +80,40 @@ namespace CodePass
         private void GenerateAndDisplayCode()
         {
             string newCode = GenerateRandomCode(6);
-            File.WriteAllText("Code.txt", newCode);
+            string salt;
+            string hash = HashCode(newCode, out salt);
+
+            // Сохраняем соль и хеш вместо чистого кода
+            File.WriteAllText("Code.txt", $"{salt}|{hash}");
+
             codeLabel.Text = $"Код: {newCode}";
             codeLabel.Location = new Point((this.ClientSize.Width - codeLabel.Width) / 2, 150);
+        }
+        private string HashCode(string code, out string salt, int iterations = 10000)
+        {
+            byte[] saltBytes = new byte[32];
+            using (var rng = RandomNumberGenerator.Create())
+            {
+                rng.GetBytes(saltBytes);
+            }
+            salt = Convert.ToBase64String(saltBytes);
+
+            using (var pbkdf2 = new Rfc2898DeriveBytes(
+                code,
+                saltBytes,
+                iterations,
+                HashAlgorithmName.SHA256))
+            {
+                byte[] hashBytes = pbkdf2.GetBytes(32);
+                return Convert.ToBase64String(hashBytes);
+            }
         }
 
         private string GenerateRandomCode(int length)
         {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-            return new string(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
+            const string chars = "ACDEFGHJKLMNPQRTUVWXYZ234679";
+            return new string(Enumerable.Repeat(chars, length)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
         private void OnFormClosing(object sender, FormClosingEventArgs e)

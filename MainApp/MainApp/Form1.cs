@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -48,9 +49,17 @@ namespace MainApp
                             string filePath = @"Code.txt";
                             if (File.Exists(filePath))
                             {
-                                string storedCode = File.ReadAllText(filePath).Trim();
+                                string[] storedData = File.ReadAllText(filePath).Split('|');
+                                if (storedData.Length != 2)
+                                {
+                                    MessageBox.Show("Ошибка формата кода");
+                                    return;
+                                }
 
-                                if (userInputCode == storedCode)
+                                string storedSalt = storedData[0];
+                                string storedHash = storedData[1];
+
+                                if (VerifyCode(userInputCode, storedSalt, storedHash))
                                 {
                                     MessageBox.Show("Вход произведён");
                                 }
@@ -58,10 +67,6 @@ namespace MainApp
                                 {
                                     MessageBox.Show("Код неверен");
                                 }
-                            }
-                            else
-                            {
-                                MessageBox.Show("Файл с кодом не найден");
                             }
                         }
                     }
@@ -118,6 +123,28 @@ namespace MainApp
                 return false;
             }
             return true;
+        }
+        private bool VerifyCode(string inputCode, string storedSalt, string storedHash, int iterations = 10000)
+        {
+            try
+            {
+                byte[] saltBytes = Convert.FromBase64String(storedSalt);
+
+                using (var pbkdf2 = new Rfc2898DeriveBytes(
+                    inputCode,
+                    saltBytes,
+                    iterations,
+                    HashAlgorithmName.SHA256))
+                {
+                    byte[] inputHashBytes = pbkdf2.GetBytes(32);
+                    string inputHash = Convert.ToBase64String(inputHashBytes);
+                    return inputHash == storedHash;
+                }
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         private void buttonRegistr_Click(object sender, EventArgs e)
